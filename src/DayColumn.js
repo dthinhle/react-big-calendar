@@ -185,7 +185,6 @@ class DayColumn extends React.Component {
       step,
       timeslots,
       dayLayoutAlgorithm,
-      minimumStartDifference,
     } = this.props
 
     const { slotMetrics } = this
@@ -195,8 +194,7 @@ class DayColumn extends React.Component {
       events,
       accessors,
       slotMetrics,
-      minimumStartDifference:
-        minimumStartDifference || Math.ceil((step * timeslots) / 2),
+      minimumStartDifference: Math.ceil((step * timeslots) / 2),
       dayLayoutAlgorithm,
     })
 
@@ -382,7 +380,6 @@ DayColumn.propTypes = {
   max: PropTypes.instanceOf(Date).isRequired,
   getNow: PropTypes.func.isRequired,
   isNow: PropTypes.bool,
-  minimumStartDifference: PropTypes.number,
 
   rtl: PropTypes.bool,
 
